@@ -1,0 +1,7 @@
+<meta>
+    <!-- Utils scripts -->
+    <script src='utils/utilsC.lua' type='client' cache='false'/>
+    <!-- Client scripts -->
+    <script src='essentials/stroke.lua' type='client' cache='false'/>
+    <script src='essentials/hud.lua' type='client' cache='false'/>
+</meta>
