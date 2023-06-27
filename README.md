@@ -1,5 +1,6 @@
 ## Svg Tools
 
+
 O Svg Tools é uma biblioteca em Lua que permite a criação e animação de gráficos SVG. Ele fornece uma maneira simples de criar e manipular elementos SVG, especialmente útil para animações de traços de linha (stroke).
 
 ### Como usar
@@ -9,6 +10,9 @@ O Svg Tools é uma biblioteca em Lua que permite a criação e animação de gr�
 3. Use o método `update` para desenhar e atualizar o gráfico SVG em um contexto gráfico.
 
 Exemplo de uso:
+
+https://github.com/Hamertingo/SvgStrokeTools/assets/137920960/8da3fc84-ec95-48a1-8dce-87bd4f5581a2
+
 
 Cria um novo SVGCache:
 
@@ -39,3 +43,5 @@ function draw()
     end
 end
 ```
+
+
