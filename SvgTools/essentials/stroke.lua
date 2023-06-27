@@ -7,16 +7,16 @@ function SVGCache:new(w, h, type, color, animate, animationSpeed, stroke)
     assert(w and h, "É necessário fornecer a largura e a altura para a criação de SVG.")
     assert(type == 'circle' or type == 'rect' or type == 'polygon', "Tipo inválido fornecido para SVG. Opções válidas são 'circle', 'rect' ou 'polygon'.")
 
-    local data = {}
+    local data = { };
     setmetatable(data, SVGCache)
 
     data.stroke = stroke
     data.w = w
     data.h = h
 
-    local svgCircle = string.change([[<svg width='${width}' height='${height}' xmlns="http://www.w3.org/2000/svg"> <circle cx="30" cy="30" r="25" stroke="white" stroke-width="${strokewidth}" fill="none" stroke-dasharray="157" stroke-dashoffset="0"/></svg>]], {['width'] = w, ['height'] = h, ['strokewidth'] = stroke})
-    local svgPolygon = string.change([[<svg width='${width}' height='${height}'> <polygon fill='none' stroke='#FFFFFF' stroke-width='${strokewidth}' points='16,1 32,32 1,32 16,1' stroke-dasharray='157' stroke-dashoffset='0' /></svg>   ]], {['width'] = w, ['height'] = h, ['strokewidth'] = stroke})
-    local svgRect = string.change([[<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="40" height="40" stroke="white" stroke-width="${strokewidth}" fill="none" stroke-dasharray="160" stroke-dashoffset="0"/></svg>]], {['width'] = w, ['height'] = h, ['strokewidth'] = stroke})
+    local svgCircle = string.change([[<svg width='${width}' height='${height}' viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"> <circle cx="30" cy="30" r="25" stroke="white" stroke-width="${strokewidth}" fill="none" stroke-dasharray="157" stroke-dashoffset="0"/></svg>]], {['width'] = w, ['height'] = h, ['strokewidth'] = stroke})
+    local svgPolygon = string.change([[<svg width='${width}' height='${height}' viewBox="0 0 60 60"> <polygon fill='none' stroke='#FFFFFF' stroke-width='${strokewidth}' points='16,1 32,32 1,32 16,1' stroke-dasharray='110' stroke-dashoffset='0' /></svg>   ]], {['width'] = w, ['height'] = h, ['strokewidth'] = stroke})
+    local svgRect = string.change([[<svg width="${width}" height="${height}" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="40" height="40" stroke="white" stroke-width="${strokewidth}" fill="none" stroke-dasharray="160" stroke-dashoffset="0"/></svg>]], {['width'] = w, ['height'] = h, ['strokewidth'] = stroke})
 
     local svg = nil
     data.dashArray = 157
